@@ -1,0 +1,1 @@
+quick way to get dependency injection using Ninject in MVC.
