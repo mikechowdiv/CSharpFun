@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace DvdRental1
@@ -13,11 +9,14 @@ namespace DvdRental1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "MoviesByReleaseDate",
-                "movies/released/{year}/{month}",
-                new { controller = "Movies", action= "ByRelesaeDate"}
-                );
+            routes.MapMvcAttributeRoutes();
+
+            //routes.MapRoute(
+            //    "MoviesByReleaseDate",
+            //    "movies/released/{year}/{month}",
+            //    new { controller = "Movies", action= "ByRelesaeDate"},
+            //    new { year = @"\d{4}", month = @"\d{2}"}
+            //    );
 
             routes.MapRoute(
                 name: "Default",
