@@ -32,11 +32,11 @@ else
         <tbody>
             @foreach (var customer in Model)
             {
-                <th>
+                <tr>
                     <td>
                         @Html.ActionLink(customer.Name, "Details", "Customers", new {id=customer.Id}, null)
                     </td>
-                </th>
+                </tr>
             }
         </tbody>
     </table>
