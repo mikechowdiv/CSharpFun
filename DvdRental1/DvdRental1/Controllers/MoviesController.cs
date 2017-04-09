@@ -1,4 +1,5 @@
-﻿using DvdRental1.Models;
+﻿using System;
+using DvdRental1.Models;
 using System.Web.Mvc;
 
 namespace DvdRental1.Controllers
@@ -12,9 +13,23 @@ namespace DvdRental1.Controllers
             return View(movie);
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult ByRelesaeDate(int year, int month)
         {
-            return Content("id=" + id);
+            return Content(year + "/" + month);
         }
+
+        //public ActionResult Edit(int id)
+        //{
+        //    return Content("id=" + id);
+        //}
+
+        //public ActionResult Index(int? pageIndex, string sortBy)
+        //{
+        //    if (!pageIndex.HasValue)
+        //        pageIndex = 1;
+        //    if (String.IsNullOrWhiteSpace(sortBy))
+        //        sortBy = "Name";
+        //    return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+        //}
     }
 }
