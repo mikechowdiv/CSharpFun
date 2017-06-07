@@ -10,6 +10,7 @@ namespace StudentMgtSystem
     {
         static void Main(string[] args)
         {
+            MainMenu.Show();
         }
     }
 }

@@ -1,1 +1,2 @@
 FirstName,LastName,Major,GPA
+Sara,Kanga,Computer Science,4.0

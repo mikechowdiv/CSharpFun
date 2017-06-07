@@ -43,9 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\StudentRepo.cs" />
+    <Compile Include="Helpers\ConsoleIO.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflows\ListStudentWorkflow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
