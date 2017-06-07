@@ -28,7 +28,7 @@ namespace Models
             HitPoints = maxHitPts;
             Name = name;
             IsDead = false;
-            Weapon = Weapon;
+            Weapon = weapon;
         }
         public void Attack(Goblin target)
         {

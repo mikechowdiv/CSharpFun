@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoblinBattle", "GoblinBattl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{F65E9FC3-8975-41E9-92C0-B5DF2E415A07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{ABA0F178-4AC6-4D8C-97F5-F4590BF0C5F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F65E9FC3-8975-41E9-92C0-B5DF2E415A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F65E9FC3-8975-41E9-92C0-B5DF2E415A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F65E9FC3-8975-41E9-92C0-B5DF2E415A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA0F178-4AC6-4D8C-97F5-F4590BF0C5F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA0F178-4AC6-4D8C-97F5-F4590BF0C5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA0F178-4AC6-4D8C-97F5-F4590BF0C5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA0F178-4AC6-4D8C-97F5-F4590BF0C5F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
