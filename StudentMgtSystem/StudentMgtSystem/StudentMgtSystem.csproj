@@ -50,7 +50,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workflows\AddStudentWorkflow.cs" />
+    <Compile Include="Workflows\EditStudentWorkflow.cs" />
     <Compile Include="Workflows\ListStudentWorkflow.cs" />
+    <Compile Include="Workflows\RemoveStudentWorkflow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

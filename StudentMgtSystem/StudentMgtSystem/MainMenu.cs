@@ -41,12 +41,12 @@ namespace StudentMgtSystem
                     addWorkflow.Execute();
                     break;
                 case "3":
-                    Console.WriteLine("Remove Student");
-                    Console.ReadKey();
+                    RemoveStudentWorkflow removeWorkflow = new RemoveStudentWorkflow();
+                    removeWorkflow.Execute();
                     break;
                 case "4":
-                    Console.WriteLine("Edit Student");
-                    Console.ReadKey();
+                    EditStudentWorkflow editWorkflow = new EditStudentWorkflow();
+                    editWorkflow.Execute();
                     break;
                 case "Q":
                     return false;
