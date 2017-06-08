@@ -16,15 +16,11 @@ namespace StudentMgtSystem.Workflows
 
             Console.Clear();
             Console.WriteLine("Student List");
-            Console.WriteLine(ConsoleIO.SeparatorBar);
-
-            string line = "{0,-20} {1,-15} {2,5}";
-            Console.WriteLine(line, "Name", "Major", "GPA");
-            Console.WriteLine(ConsoleIO.SeparatorBar);
+            ConsoleIO.PrintHeader();
 
             foreach(var items in students)
             {
-                Console.WriteLine(line, items.LastName + ", " + items.FirstName, items.Major, items.GPA);
+                Console.WriteLine(ConsoleIO.StudentLineFormat, items.LastName + ", " + items.FirstName, items.Major, items.GPA);
             }
 
             Console.WriteLine();

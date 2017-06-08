@@ -33,12 +33,12 @@ namespace StudentMgtSystem
             switch (input)
             {
                 case "1":
-                    ListStudentWorkflow workflow = new ListStudentWorkflow();
-                    workflow.Execute();
+                    ListStudentWorkflow listWorkflow = new ListStudentWorkflow();
+                    listWorkflow.Execute();
                     break;
                 case "2":
-                    Console.WriteLine("Add Student");
-                    Console.ReadKey();
+                    AddStudentWorkflow addWorkflow = new AddStudentWorkflow();
+                    addWorkflow.Execute();
                     break;
                 case "3":
                     Console.WriteLine("Remove Student");
