@@ -14,7 +14,9 @@ namespace LinqExample
             //MethodSyntax1();
             //MethodSyntax2();
             //MethodSyntax3();
-            MethodSyntax4();
+            //MethodSyntax4();
+            //MethodSyntax5();
+            QuerySyntax4();
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
@@ -48,7 +50,28 @@ namespace LinqExample
             PrintStudents(orderByGPATop3);
         }
 
+        static void QuerySyntax4()
+        {
+            var orderByGPATop3 = (from s in StudentRepository.SelectAll() orderby s.GPA descending select s).Take(3);
+            PrintStudents(orderByGPATop3);
+        }
 
+        static void MethodSyntax5()
+        {
+            var groups = StudentRepository.SelectAll().GroupBy(s => s.Major);
+            string lineFormat = "{0, -15} {1, -15}  {2,4}";
+            foreach (var items in groups)
+            {
+                Console.WriteLine("Major: {0}", items.Key);
+                Console.WriteLine("-------------------------------------------------------------");
+
+                foreach(var item1 in items)
+                {
+                    Console.WriteLine(lineFormat, item1.LastName, item1.FirstName, item1.GPA);
+                }
+                Console.WriteLine();
+            }
+        }
 
         static void PrintStudents(IEnumerable<Student> students)
         {
