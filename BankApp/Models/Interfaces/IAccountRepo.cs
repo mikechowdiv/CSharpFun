@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Models.Interfaces
 {
-    interface IAccountRepo
+   public interface IAccountRepo
     {
+        Account LoadAcct(string AcctNum);
+        void SaveAcct(Account acct);
     }
 }
