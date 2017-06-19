@@ -16,7 +16,9 @@ namespace LinqExample
             //MethodSyntax3();
             //MethodSyntax4();
             //MethodSyntax5();
-            QuerySyntax4();
+            //QuerySyntax4();
+            //QuerySyntax5();
+            AnonymousType();
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
@@ -56,6 +58,23 @@ namespace LinqExample
             PrintStudents(orderByGPATop3);
         }
 
+        static void QuerySyntax5()
+        {
+            var groups = from s in StudentRepository.SelectAll() group s by s.Major into newgroup orderby newgroup.Key select newgroup;
+            string lineFormat = "{0, -15} {1, -15}  {2,4}";
+            foreach (var items in groups)
+            {
+                Console.WriteLine("Major: {0}", items.Key);
+                Console.WriteLine("-------------------------------------------------------------");
+
+                foreach (var item1 in items)
+                {
+                    Console.WriteLine(lineFormat, item1.LastName, item1.FirstName, item1.GPA);
+                }
+                Console.WriteLine();
+            }
+        }
+
         static void MethodSyntax5()
         {
             var groups = StudentRepository.SelectAll().GroupBy(s => s.Major);
@@ -72,6 +91,23 @@ namespace LinqExample
                 Console.WriteLine();
             }
         }
+
+        static void AnonymousType()
+        {
+            var students = from s in StudentRepository.SelectAll() select new { LastFirst = s.LastName + ", " + s.FirstName, s.Major, s.GPA };
+
+            string lineFormat = "{0, -15} {1, -18} {2,4}";
+
+            Console.WriteLine(lineFormat, "Name", "Major", "GPA");
+            Console.WriteLine("----------------------------------------------------------");
+
+            foreach (var items in students)
+            {
+                Console.WriteLine(lineFormat, items.LastFirst, items.Major, items.GPA);
+            }
+        }
+
+
 
         static void PrintStudents(IEnumerable<Student> students)
         {
