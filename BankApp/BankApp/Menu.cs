@@ -32,6 +32,8 @@ namespace BankApp
                         lookupWF.Execute();
                         break;
                     case "2":
+                        DepositWorkflow depositWF = new DepositWorkflow();
+                        depositWF.Execute();
                         break;
                     case "3":
                         break;
