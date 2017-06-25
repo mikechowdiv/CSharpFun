@@ -10,6 +10,7 @@ namespace BLL
 {
    public static class Factory
     {
+        //the factory is in charge of deciding which interface implementations to use
         public static AccountManager Create()
         {
             string mode = ConfigurationManager.AppSettings["Mode"].ToString();
