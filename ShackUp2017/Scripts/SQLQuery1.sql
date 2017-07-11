@@ -1,0 +1,12 @@
+USE master
+GO
+
+IF EXISTS(SELECT * FROM sys.databases WHERE name = 'ShackUp2017')
+DROP DATABASE ShackUp2017
+GO
+
+CREATE DATABASE ShackUp2017
+GO
+
+USE ShackUp2017
+GO
