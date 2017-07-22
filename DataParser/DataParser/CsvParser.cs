@@ -18,17 +18,18 @@ namespace DataParser
             {
                 while (!sr.EndOfStream)
                 {
-                    FullTest = sr.ReadToEnd().ToString();
-                    string[] rows = FullTest.Split('\n');
+                    
+                    FullTest = sr.ReadToEnd().ToString(); //read full file text
+                    string[] rows = FullTest.Split('\n'); //split full file text into rows
                     for (int i = 0; i < rows.Count() - 1; i++)
                     {
-                        string[] rowValues = rows[i].Split(',');
+                        string[] rowValues = rows[i].Split(','); //split each row with comma to get individual values
                         {
                             if (i == 0)
                             {
                                 for (int j = 0; j < rowValues.Count(); j++)
                                 {
-                                    dtCsv.Columns.Add(rowValues[j]);
+                                    dtCsv.Columns.Add(rowValues[j]); //add headers
                                 }
                             }
                             else
@@ -39,7 +40,7 @@ namespace DataParser
                                 {
                                     dr[k] = rowValues[k].ToString();
                                 }
-                                dtCsv.Rows.Add(dr);
+                                dtCsv.Rows.Add(dr); //add other rows
                             }
                         }                     
                     }
