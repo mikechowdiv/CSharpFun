@@ -1,0 +1,12 @@
+diff in sales
+Report1 vs Report2: 0.000
+Report1 vs Report3: 0.000
+--------------------------------------------
+diff in GST
+Report1 vs Report2: 0.000
+Report1 vs Report3: 0.000
+--------------------------------------------
+diff in QTY
+Report1 vs Report2: 0.000
+Report1 vs Report3: 0.000
+--------------------------------------------
