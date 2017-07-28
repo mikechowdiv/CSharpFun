@@ -1,0 +1,5 @@
+Date,Site,Site Name,Location,Terminal,Journal,Sequence,Time,Item,Barcode,Description,Department,Department Name,Division,Division Name,Sales,GST,Quantity,Cost,Item Discount,Loyalty Discount,Offer Discount,Price,Original Price,Scanned,Is Loyalty
+8/7/2017,1,Claremont,1,101,326692,2,8/7/2017 9:47,8598,540,Ice,135,Frozen & Ice,Supermarket,,4.5,0.41,1,0,0,0,4.5,0,F,F,
+8/7/2017,1,Claremont,1,101,326692,1,8/7/2017 9:47,8598,540,Ice,135,Frozen & Ice,Supermarket,,4.5,0.41,1,0,0,0,4.5,0,F,F,
+8/7/2017,1,Claremont,1,201,326695,1,8/7/2017 10:21,58430,9.31179E+12,Yalumba Y Temp,20,Red Wine,Wine,,12.99,1.18,1,0,0,0,12.99,0,F,T,
+8/7/2017,1,Claremont,1,201,326695,3,8/7/2017 10:21,8603,80003,PROMO 3,107,Promo Tracking Codes,OTHER,,0,0,1,0,0,0,0,0,F,T,

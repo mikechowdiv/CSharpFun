@@ -26,6 +26,7 @@ namespace DataParser
             return report;
         }
 
+        //method to get the sum total of the 3 columns in the csv files
         private static double GetTotal(DataTable db, string columnName)
         {
             var total = db.AsEnumerable().Sum(r =>

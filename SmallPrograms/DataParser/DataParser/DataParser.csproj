@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75F82F86-2680-4462-979A-9516F142C328}</ProjectGuid>
+    <ProjectGuid>{EE17582E-CB39-4EBE-AE48-AEEDA0C62B00}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DataParser</RootNamespace>
     <AssemblyName>DataParser</AssemblyName>
@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -47,25 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigReader.cs" />
-    <Compile Include="CsvParser.cs" />
-    <Compile Include="ExceptionReport.cs" />
-    <Compile Include="ItemsReport.cs" />
-    <Compile Include="JournalsReport.cs" />
+    <Compile Include="CSVParser.cs" />
+    <Compile Include="Model\ReportModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportBase.cs" />
-    <Compile Include="ReportModel.cs" />
-    <Compile Include="SalesReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

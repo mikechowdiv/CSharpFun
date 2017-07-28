@@ -8,22 +8,21 @@ using System.Threading.Tasks;
 
 namespace DataParser
 {
-   public class CsvParser
+   public class CSVParser
     {
-        public DataTable ReadCsvFile(string filePath)
+        public DataTable ReadCSVFile(string filePath)
         {
             DataTable dtCsv = new DataTable();
-            string FullTest;
+            string FullText;
 
             using (StreamReader sr = new StreamReader(filePath))
             {
-                while (!sr.EndOfStream)
-                {                  
-                    FullTest = sr.ReadToEnd().ToString(); //read full file text
-                    string[] rows = FullTest.Split('\n'); //split full file text into rows
+                FullText = sr.ReadToEnd().ToString(); //read full file text
+                string[] rows = FullText.Split('\n'); //split full file text into rows
+                {
                     for (int i = 0; i < rows.Count() - 1; i++)
                     {
-                        string[] rowValues = rows[i].Split(','); //split each row with comma to get individual values
+                        string[] rowValues = rows[i].Split(','); //split each row with comma to get individual value
                         {
                             if (i == 0)
                             {
@@ -36,17 +35,18 @@ namespace DataParser
                             {
                                 DataRow dr = dtCsv.NewRow();
                                 var length = rowValues.Count() > dtCsv.Columns.Count ? dtCsv.Columns.Count : rowValues.Count();
+
                                 for (int k = 0; k < length; k++)
                                 {
                                     dr[k] = rowValues[k].ToString();
                                 }
                                 dtCsv.Rows.Add(dr); //add other rows
                             }
-                        }                     
+                        }                       
                     }
                 }
             }
             return dtCsv;
-        } 
+        }
     }
 }

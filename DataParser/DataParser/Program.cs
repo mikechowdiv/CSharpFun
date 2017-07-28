@@ -16,8 +16,21 @@ namespace DataParser
             try
             {
                 var salesFilePath = ConfigReader.SalesCsvPath;
+                var itemsFilePath = ConfigReader.ItemsCsvPath;
+                var journalsFilePath = ConfigReader.JournalsCsvPath;
+                var exceptionReportPath = ConfigReader.ExceptionReportPath;
 
+                var salesReport = new SalesReport().GetReport(salesFilePath);
+                var itemsReport = new ItemsReport().GetReport(itemsFilePath);
+                var journalsReport = new JournalsReport().GetReport(journalsFilePath);
+
+                new ExceptionReport().GenerateExceptionReport(salesReport, itemsReport, journalsReport, exceptionReportPath);
+
+                new SalesReport().ExportToDB(salesFilePath);
+                new ItemsReport().ExportToDB(itemsFilePath);
+                new JournalsReport().ExportToDB(journalsFilePath);
             }
+
             catch(Exception ex)
             {
                 logger.Error(ex, ex.Message);
