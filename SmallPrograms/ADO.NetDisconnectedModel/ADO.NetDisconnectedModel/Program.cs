@@ -16,7 +16,7 @@ namespace ADO.NetDisconnectedModel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageEmployee());
+            Application.Run(new ProjectingDataDetailsView());
         }
     }
 }

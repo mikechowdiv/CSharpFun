@@ -51,13 +51,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenDataFromTypedDataset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenDataFromTypedDataset.Designer.cs">
+      <DependentUpon>GenDataFromTypedDataset.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageEmployee.Designer.cs">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="NorthwindDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectingDataDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectingDataDetailsView.Designer.cs">
+      <DependentUpon>ProjectingDataDetailsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchEmployee.cs">
       <SubType>Form</SubType>
@@ -74,8 +91,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenDataFromTypedDataset.resx">
+      <DependentUpon>GenDataFromTypedDataset.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectingDataDetailsView.resx">
+      <DependentUpon>ProjectingDataDetailsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +115,17 @@
     <EmbeddedResource Include="ShowEmployees.resx">
       <DependentUpon>ShowEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="NorthwindDS.xsc">
+      <DependentUpon>NorthwindDS.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NorthwindDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NorthwindDS.xss">
+      <DependentUpon>NorthwindDS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

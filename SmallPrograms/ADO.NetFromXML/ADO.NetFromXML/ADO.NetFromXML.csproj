@@ -51,6 +51,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenDataFromTypedDataSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenDataFromTypedDataSet.Designer.cs">
+      <DependentUpon>GenDataFromTypedDataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -65,6 +76,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="NorthwindDS.xsc">
+      <DependentUpon>NorthwindDS.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NorthwindDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NorthwindDS.xss">
+      <DependentUpon>NorthwindDS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
