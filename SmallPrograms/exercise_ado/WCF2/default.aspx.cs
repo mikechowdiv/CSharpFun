@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,7 @@ namespace WCF2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string CS = "data source=.; database = Sample; integrated security=SSPI";
+            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(CS))
             {
