@@ -17,7 +17,7 @@ namespace Part4._1
             using (SqlConnection conn = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "INSERT INTO [dbo].[tblProduct] values (3, 'Acer', 1230, 33)";
+                cmd.CommandText = "INSERT INTO [dbo].[tblProduct] values (5, 'Sony', 3230, 23)";
                 cmd.Connection = conn;
                 conn.Open();
                 int TotalRowsAffected = cmd.ExecuteNonQuery();
