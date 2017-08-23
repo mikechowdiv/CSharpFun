@@ -41,13 +41,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddWorkflow.cs" />
+    <Compile Include="DeleteWorkflow.cs" />
     <Compile Include="ListWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateWorkflow.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{E6C4F431-CBBF-4E39-AA44-E1BBF1308489}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{B3DAFF3D-ED1A-4090-91B1-B917AC414D32}</Project>
+      <Name>Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{D9160422-1130-4662-9B79-A8AEFA85717F}</Project>

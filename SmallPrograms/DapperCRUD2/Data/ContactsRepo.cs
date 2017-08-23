@@ -32,7 +32,8 @@ namespace Data
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var affectedRows = this.db.Execute("DELETE FROM Contacts WHERE Id=@Id", new { Id = id });
+            return affectedRows > 0;
         }
 
         public List<Contacts> GetAll()
@@ -42,12 +43,14 @@ namespace Data
 
         public Contacts GetById(int id)
         {
-            throw new NotImplementedException();
+            return this.db.Query<Contacts>("SELECT * FROM Contacts WHERE Id=@Id", new { Id = id }).FirstOrDefault();
         }
 
         public bool Update(Contacts contacts, string ColumnName)
         {
-            throw new NotImplementedException();
+            string query = "UPDATE Contacts SET " + ColumnName + "=@" + ColumnName + " WHERE Id=@Id";
+            var count = this.db.Execute(query, contacts);
+            return count > 0;
         }
     }
 }

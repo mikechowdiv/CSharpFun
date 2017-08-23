@@ -1,4 +1,5 @@
 ﻿using Data;
+using Helpers;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -15,26 +16,30 @@ namespace Workflows
         public void Exe()
         {
             Console.Clear();
-            Console.WriteLine(new string('*', 20));
-            Console.WriteLine("Enter the FirstName, LastName , Company And Title Of Contacts");
-            Console.Write("First Name : ");
-            String fName = Console.ReadLine();
-            Console.Write("Last Name : ");
-            String lName = Console.ReadLine();
-            Console.Write("Company Name : ");
-            String company = Console.ReadLine();
-            Console.Write("Title Name : ");
-            String title = Console.ReadLine();
-            //inserting
-            Contacts contacts1 = new Contacts
-            {
-                FirstName = fName,
-                LastName = lName,
-                Company = company,
-                Title = title
-            };
-            contactsRepository.Add(contacts1);
+            Console.WriteLine(ConsoleIO.SeparationBar);
+            Contacts contacts1 = new Contacts();
 
+            contacts1.FirstName = ConsoleIO.GetRequiredStringFromUser("First Name: ");
+            contacts1.LastName = ConsoleIO.GetRequiredStringFromUser("Last Name: ");
+            contacts1.Company = ConsoleIO.GetRequiredStringFromUser("Company: ");
+            contacts1.Title = ConsoleIO.GetRequiredStringFromUser("Title");
+
+            Console.WriteLine();
+            if (ConsoleIO.GetYesNoFromUser("Add the following info: ") == "Y")
+            {
+                contactsRepository.Add(contacts1);
+                Console.WriteLine("Contact Added");
+                Console.WriteLine("Press any key to continue....");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Action Cancelled");
+                Console.WriteLine("Press any key to continue....");
+                Console.ReadKey();
+            }
+
+            
             ListWorkflow lwf = new ListWorkflow();
             lwf.Exe();
            

@@ -1,4 +1,5 @@
 ﻿using Data;
+using Helpers;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace Workflows
 
         public void Exe()
         {
-            Console.WriteLine(new string('*', 20));
+            Console.WriteLine(ConsoleIO.SeparationBar);
+
             List<Contacts> contacts = contactsRepository.GetAll();
             foreach (var cont in contacts)
             {
