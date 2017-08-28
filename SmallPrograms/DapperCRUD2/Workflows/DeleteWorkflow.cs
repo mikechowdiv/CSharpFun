@@ -26,7 +26,7 @@ namespace Workflows
 
             int id = Convert.ToInt32(Console.ReadLine());
             contactsRepository.Delete(id);
-            Contacts removedContact = contactsRepository.GetById(3);
+            Contacts removedContact = contactsRepository.GetById(2);
 
             if (removedContact == null)
             {
