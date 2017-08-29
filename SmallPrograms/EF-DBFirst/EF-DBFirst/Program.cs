@@ -13,33 +13,50 @@ namespace EF_DBFirst
         {
             using (var ctx = new AdventureWorksLT2012Entities())
             {
-                var customer = new Customer();
-                ctx.Customers.Add(customer);
-               
+                DoCustomerActions();             
+            }
+        }
 
-                try
-                {
-                    // Your code...
-                    // Could also be before try if you know the exception occurs in SaveChanges
+        private static void DoCustomerActions()
+        {
+            using (var ctx = new AdventureWorksLT2012Entities())
+            {
+                Commit(ctx);
+            }
+        }
 
-                    ctx.SaveChanges();
-                }
-                catch (DbEntityValidationException e)
+        private static void CreateCustomer(AdventureWorksLT2012Entities ctx)
+        {
+            var customer = new Customer()
+            {
+                FirstName = "John",
+                LastName = "Smith",
+                PasswordHash = "xyz",
+                PasswordSalt = "abc",
+                rowguid = Guid.NewGuid()
+            };
+            ctx.Customers.Add(customer);
+        }
+
+        private static void Commit(AdventureWorksLT2012Entities ctx)
+        {
+            try
+            {
+                ctx.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
                 {
-                    foreach (var eve in e.EntityValidationErrors)
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
                     {
-                        Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                            eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                        foreach (var ve in eve.ValidationErrors)
-                        {
-                            Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                                ve.PropertyName, ve.ErrorMessage);
-                        }
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
                     }
-                    throw;
                 }
-
-
+                throw;
             }
         }
     }
